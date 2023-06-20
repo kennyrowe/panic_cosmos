@@ -1,8 +1,7 @@
 from typing import Optional, List
 
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, \
-    Handler, CallbackContext
+from telegram.ext import Updater, CommandHandler, CallbackContext
 
 from src.alerting.alert_utils.telegram_bot_api import TelegramBotApi
 
@@ -10,7 +9,7 @@ from src.alerting.alert_utils.telegram_bot_api import TelegramBotApi
 class TelegramCommandHandler:
 
     def __init__(self, bot_token: str, authorised_chat_id: Optional[str],
-                 handlers: Optional[List[Handler]] = None) -> None:
+                 handlers: Optional[List[CommandHandler]] = None) -> None:
         self._bot_token = bot_token
         self._authorised_chat_id = authorised_chat_id
 
