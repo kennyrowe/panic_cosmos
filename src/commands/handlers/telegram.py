@@ -4,7 +4,7 @@ from typing import Optional
 
 from redis import RedisError
 from telegram import Update
-from telegram.ext import CommandHandler, MessageHandler, Filters, \
+from telegram.ext import CommandHandler, MessageHandler, filters, \
     CallbackContext
 
 from src.commands.commands import Commands
@@ -51,7 +51,7 @@ class TelegramCommands(Commands):
             CommandHandler('block', self._block_callback),
             CommandHandler('tx', self._tx_callback),
             CommandHandler('help', self._help_callback),
-            MessageHandler(Filters.command, self._unknown_callback)
+            MessageHandler(filters.command, self._unknown_callback)
         ]
 
         # Create command handler with the command handlers
